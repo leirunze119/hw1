@@ -1,0 +1,12 @@
+%this is a matlab .m file
+
+in=imread('lena.bmp');	%读取bmp图片，原始图像灰度级为8
+for L=8:-1:1
+    out=bitshift(in,L-8);   %将输入右移8-L位，得到灰度级为L的图像
+    %保存结果
+    imwrite(im2double(out).*255./(bitshift(1,L)-1),strcat('intensity_',num2str(L),'.bmp'));
+    %显示结果
+    subplot(2,4,9-L);   %在一个窗口内按两行四列显示8张图像
+    imshow(out,[0 bitshift(1,L)-1]);    %按灰度范围0~2^L-1显示图像
+    title(strcat('灰度级为',num2str(L)));   %为图片添加标题
+end

@@ -1,10 +1,10 @@
 %this is a matlab .m file
 
-in=im2double(imread('lena.bmp')).*255;  %¶ÁÈ¡bmpÍ¼Æ¬
-h=size(in,1);   %Í¼Ïñ¸ß¶È
-w=size(in,2);   %Í¼Ïñ¿í¶È
+in=im2double(imread('lena.bmp')).*255;  %è¯»å–bmpå›¾ç‰‡
+h=size(in,1);   %å›¾åƒé«˜åº¦
+w=size(in,2);   %å›¾åƒå®½åº¦
 
-%¼ÆËãÍ¼Ïñ¾ùÖµ
+%è®¡ç®—å›¾åƒå‡å€¼
 avg=0;  
 for i=1:size(in,1)
     for j=1:size(in,2)
@@ -13,7 +13,7 @@ for i=1:size(in,1)
 end
 avg=avg/(w*h);
 
-%¼ÆËãÍ¼Ïñ·½²î
+%è®¡ç®—å›¾åƒæ–¹å·®
 v = 0;
 for i=1:size(in,1)
     for j=1:size(in,2)
@@ -22,4 +22,4 @@ for i=1:size(in,1)
 end
 v = v/(w*h);
 
-fprintf('Í¼ÏñµÄ¾ùÖµÎª%f£¬·½²îÎª%f\n',avg,v);  %ÏÔÊ¾½á¹û
+fprintf('å›¾åƒçš„å‡å€¼ä¸º%fï¼Œæ–¹å·®ä¸º%f\n',avg,v);  %æ˜¾ç¤ºç»“æœ

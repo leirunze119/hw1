@@ -1,12 +1,12 @@
 %this is a matlab .m file
 
-in=imread('lena.bmp');	%¶ÁÈ¡bmpÍ¼Æ¬£¬Ô­Ê¼Í¼Ïñ»Ò¶È¼¶Îª8
+in=imread('lena.bmp');	%è¯»å–bmpå›¾ç‰‡ï¼ŒåŸå§‹å›¾åƒç°åº¦çº§ä¸º8
 for L=8:-1:1
-    out=bitshift(in,L-8);   %½«ÊäÈëÓÒÒÆ8-LÎ»£¬µÃµ½»Ò¶È¼¶ÎªLµÄÍ¼Ïñ
-    %±£´æ½á¹û
+    out=bitshift(in,L-8);   %å°†è¾“å…¥å³ç§»8-Lä½ï¼Œå¾—åˆ°ç°åº¦çº§ä¸ºLçš„å›¾åƒ
+    %ä¿å­˜ç»“æœ
     imwrite(im2double(out).*255./(bitshift(1,L)-1),strcat('intensity_',num2str(L),'.bmp'));
-    %ÏÔÊ¾½á¹û
-    subplot(2,4,9-L);   %ÔÚÒ»¸ö´°¿ÚÄÚ°´Á½ĞĞËÄÁĞÏÔÊ¾8ÕÅÍ¼Ïñ
-    imshow(out,[0 bitshift(1,L)-1]);    %°´»Ò¶È·¶Î§0~2^L-1ÏÔÊ¾Í¼Ïñ
-    title(strcat('»Ò¶È¼¶Îª',num2str(L)));   %ÎªÍ¼Æ¬Ìí¼Ó±êÌâ
+    %æ˜¾ç¤ºç»“æœ
+    subplot(2,4,9-L);   %åœ¨ä¸€ä¸ªçª—å£å†…æŒ‰ä¸¤è¡Œå››åˆ—æ˜¾ç¤º8å¼ å›¾åƒ
+    imshow(out,[0 bitshift(1,L)-1]);    %æŒ‰ç°åº¦èŒƒå›´0~2^L-1æ˜¾ç¤ºå›¾åƒ
+    title(strcat('ç°åº¦çº§ä¸º',num2str(L)));   %ä¸ºå›¾ç‰‡æ·»åŠ æ ‡é¢˜
 end
